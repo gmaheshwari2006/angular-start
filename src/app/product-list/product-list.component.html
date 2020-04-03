@@ -1,5 +1,25 @@
-<h2>Products</h2>
+<h2>Products1</h2>
+<div *ngFor="let product of products">
+	<h3>
+		<!--property binding [ ] lets you use the property value in a template expression. -->
+		<a [title]="product.name + ' details'">
+			{{ product.name }}
+		</a>
+	</h3>
 
+	<p *ngIf="product.description">
+		Description: {{ product.description }}
+	</p>
+	<!-- Event binding uses a set of parentheses, ( ), around the event, as in the following <button> element: -->
+	<button (click)="share()">
+    Share
+  </button>
+
+	<app-product-alerts [product]="product"
+  (notify)="onNotify()">
+	</app-product-alerts>
+  
+</div>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
