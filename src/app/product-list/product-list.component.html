@@ -1,4 +1,4 @@
-<h2>Products1</h2>
+<h2>My Products</h2>
 <div *ngFor="let product of products">
 	<h3>
 		<!--property binding [ ] lets you use the property value in a template expression. -->
@@ -15,7 +15,7 @@
     Share
   </button>
 
-	<app-product-alerts [product]="product"
+	<app-product-alerts [product]=product
   (notify)="onNotify()">
 	</app-product-alerts>
   
